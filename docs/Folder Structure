@@ -1,0 +1,94 @@
+neurofeedback-app/
+│
+├── docs/                    # Documentation
+│   ├── requirements.md      # Software and hardware requirements
+│   ├── user-guide.md        # End-user guide for the application
+│   ├── developer-guide.md   # Developer instructions
+│   ├── architecture.md      # System architecture and design overview
+│   └── 3d-model-guide.md    # Instructions for using TouchDesigner for 3D models
+│
+├── src/                     # Source code
+│   ├── main.py              # Main entry point of the application
+│   ├── gui/                 # GUI components
+│   │   ├── ui/              # PyQt6 .ui files (created using Qt Designer)
+│   │   │   ├── main.ui      # Main UI file
+│   │   │   ├── login.ui     # Login interface
+│   │   │   ├── settings.ui  # Settings interface
+│   │   │   └── feedback.ui  # Feedback window interface
+│   │   │
+│   │   ├── styles/          # Styles and themes
+│   │   │   ├── scss/        # SCSS files for styling
+│   │   │   │   ├── _styles.scss
+│   │   │   │   ├── _variables.scss
+│   │   │   │   ├── defaultStyle.scss
+│   │   │   │   └── main.scss
+│   │   │   ├── generated/   # Compiled SCSS to CSS
+│   │   │   │   └── main.css
+│   │   │   ├── style.json   # JSON defining UI themes
+│   │   │   └── fonts/       # Fonts used in the UI
+│   │   │       └── Roboto.ttf
+│   │   │
+│   │   ├── icons/           # Icons for buttons, menus, etc.
+│   │   │   ├── login.png
+│   │   │   ├── settings.png
+│   │   │   └── feedback.png
+│   │   │
+│   │   ├── components/      # Custom widgets and reusable components
+│   │   │   ├── progress_bar.py
+│   │   │   ├── file_browser.py
+│   │   │   ├── custom_buttons.py
+│   │   │   └── custom_widgets.py
+│   │   │
+│   │   └── windows/         # Main windows and dialogs
+│   │       ├── dashboard.py # Main dashboard window logic
+│   │       ├── login.py     # Login and authentication window
+│   │       ├── settings.py  # Settings window logic
+│   │       └── feedback.py  # Feedback window logic
+│   │
+│   ├── backend/             # Backend logic
+│   │   ├── data_manager.py  # Handles data storage and retrieval
+│   │   ├── signal_processor.py # Signal processing for EEG
+│   │   ├── mock_data.py     # Mock data generator
+│   │   ├── session_logger.py # Logs session data and markers
+│   │   ├── auth_manager.py  # Handles user authentication
+│   │   └── api_manager.py   # Interfaces with APIs (e.g., for external logging)
+│   │
+│   ├── tests/               # Unit and integration tests
+│   │   ├── test_gui.py      # Tests for GUI components
+│   │   ├── test_backend.py  # Tests for backend logic
+│   │   ├── test_feedback.py # Tests for feedback systems
+│   │   └── test_auth.py     # Tests for login/sign-up logic
+│   │
+│   └── assets/              # Static assets (images, fonts, etc.)
+│       ├── images/          # Additional images
+│       ├── models/          # 3D models (from TouchDesigner)
+│       │   ├── model.tox    # TouchDesigner .tox file for the 3D model
+│       │   └── model_readme.md # Instructions for integrating TouchDesigner
+│       └── sounds/          # Audio feedback for events
+│           └── beep.wav
+│
+├── data/                    # Data storage
+│   ├── raw/                 # Raw EEG files (.edf)
+│   ├── processed/           # Processed EEG data
+│   ├── logs/                # Logs with session markers
+│   └── mock/                # Mock EEG data for testing
+│
+├── deploy/                  # Deployment configurations
+│   ├── Dockerfile           # Docker configuration
+│   ├── docker-compose.yml   # Docker Compose configuration
+│   └── README.md            # Deployment instructions
+│
+├── tests/                   # Additional automated testing setup
+│   ├── pytest.ini           # Pytest configuration
+│   └── mocks/               # Mock data files for testing
+│
+├── .github/                 # GitHub workflows for CI/CD
+│   └── workflows/
+│       ├── python-app.yml   # Python tests and build automation
+│       └── docker-deploy.yml # CI/CD for Docker
+│
+├── requirements.txt         # Python dependencies
+├── README.md                # Overview of the project
+├── LICENSE                  # Project license
+├── setup.py                 # Python package setup
+└── .gitignore               # Files/folders to exclude in version control
