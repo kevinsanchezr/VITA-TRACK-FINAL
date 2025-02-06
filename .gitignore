@@ -21,6 +21,6 @@ Thumbs.db
 *.so
 
 # Ignore environment-specific files
-.venv
+.env
 .vscode/
 .idea/
